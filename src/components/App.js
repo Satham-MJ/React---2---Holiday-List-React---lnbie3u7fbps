@@ -17,7 +17,6 @@ class App extends Component {
     { name: 'Museum Island', country: 'Germany' },
     { name: 'Munnar', country: 'India' },
     { name: 'Leh Ladakh', country: 'India' },
-    { name: 'Goa', country: 'India' },
     { name: 'Agra', country: 'India' },
     { name: 'Dalhousie', country: 'India' },
     { name: 'Coorg', country: 'India' },
@@ -40,7 +39,11 @@ class App extends Component {
   render() {
     return (
       <div id="main">
-        {/* Do not remove the main div */}
+        <ol>
+        {this.cityList.filter(item=>(item.country=='India' && (item.city=='Goa' || item.city=='Darjeeling' || item.city=='Lonavala'))?true:'').map((city,index)=>{
+          return <li key={`location${index+1}`}>{city.name}</li>;
+        })}
+        </ol>
       </div>
     )
   }
