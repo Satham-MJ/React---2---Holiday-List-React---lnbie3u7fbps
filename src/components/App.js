@@ -36,11 +36,11 @@ class App extends Component {
     ]
   }
 
-  render() {
+   render() {
     return (
       <div id="main">
         <ol>
-        {this.cityList.filter(item=>(item.country=='India' && (item.city=='Goa' || item.city=='Darjeeling' || item.city=='Lonavala'))?true:'').map((city,index)=>{
+        {this.cityList.filter(item=>(item.country=='India' && (item.name=='Goa' || item.name=='Darjeeling' || item.name=='Lonavala'))?true:'').map((city,index)=>{
           return <li key={`location${index+1}`}>{city.name}</li>;
         })}
         </ol>
